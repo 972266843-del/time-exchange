@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Time Exchange - 时间交换</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-taupe": "#8D8176",
+                        "natural-bg": "#F5F5F0",
+                        "natural-card": "#FFFFFF",
+                        "accent-sand": "#D6CFC7",
+                        "brand-beige": "#F7F3F0",
+                        "brand-tea": "#A8B19E",
+                        "brand-green": "#8BAA91",
+                        "text-main": "#4A4A4A",
+                        "text-light": "#8E8E93"
+                    },
+                    fontFamily: {
+                        "display": ["Quicksand", "Noto Sans SC", "sans-serif"],
+                        "sans": ["Inter", "Noto Sans SC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "sm": "12px",
+                        "DEFAULT": "18px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "1.25rem",
+                        "3xl": "1.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 8px 30px rgba(0, 0, 0, 0.04)',
+                        'card': '0 12px 40px -10px rgba(141, 129, 118, 0.12)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-natural-bg text-primary-taupe font-display overflow-x-hidden;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+        @layer components {
+            .glass-effect {
+                @apply backdrop-blur-xl bg-white/40;
+            }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            }
+            .animate-hourglass {
+                animation: hourglass-rotate 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            }
+            @keyframes hourglass-rotate {
+                0% { transform: rotate(0deg); }
+                45% { transform: rotate(180deg); }
+                55% { transform: rotate(180deg); }
+                100% { transform: rotate(360deg); }
+            }
+            @keyframes scrollText {
+                0% { transform: translateX(10%); }
+                100% { transform: translateX(-100%); }
+            }
+            .animate-scroll {
+                display: inline-block;
+                white-space: nowrap;
+                animation: scrollText 40s linear infinite;
+            }
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

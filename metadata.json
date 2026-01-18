@@ -1,0 +1,9 @@
+{
+  "name": "Time Exchange",
+  "description": "A mindful social platform where users share and witness '10 minutes' of authentic life moments. Features real-time feeds, reflective feedback loops, and an AI-enhanced 'Official Comic' experience.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
